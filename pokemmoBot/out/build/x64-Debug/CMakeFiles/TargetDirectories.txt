@@ -1,0 +1,3 @@
+D:/Documents/Coding/PokeMMOBot/pokemmoBot/out/build/x64-Debug/CMakeFiles/pokemmoBot.dir
+D:/Documents/Coding/PokeMMOBot/pokemmoBot/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+D:/Documents/Coding/PokeMMOBot/pokemmoBot/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
