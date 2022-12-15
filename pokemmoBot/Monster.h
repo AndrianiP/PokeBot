@@ -3,7 +3,7 @@
 
 struct Monster{
     public:
-        Monster(std::string name, vector<std::string> types,  std::string hp, std::string atk, std::string def, std::string spatk, std::string spdef, std::string spd, std::string eggGroup1, std::string eggGroup2);
+        Monster(const int id, std::string name, vector<std::string> types,  std::string hp, std::string atk, std::string def, std::string spatk, std::string spdef, std::string spd, std::string eggGroup1, std::string eggGroup2);
         // std::string getName();
         // std::string getType1();
         // std::string getType2();
@@ -16,7 +16,16 @@ struct Monster{
         // std::string getEggGroup1();
         // std::string getEggGroup2();
 
+        std::string setEggGroup1(std::string eggGroup1){
+            this->eggGroup1 = eggGroup1;
+        }
+        std::string setEggGroup2(std::string eggGroup2){
+            this->eggGroup2 = eggGroup2;
+        }
 
+        int getID(){
+            return this->id;
+        }
         std::string getName(){
             return this->name;
         }
@@ -56,6 +65,7 @@ struct Monster{
         }
 
     private:
+        const int id;
         std::string name;
         vector<std::string> types;
         std::string hp;
