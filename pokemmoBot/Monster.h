@@ -1,9 +1,11 @@
+#pragma once
 #include <string>
 #include <vector>
 
 struct Monster{
-    public:
-        Monster(const int id, std::string name, vector<std::string> types,  std::string hp, std::string atk, std::string def, std::string spatk, std::string spdef, std::string spd, std::string eggGroup1, std::string eggGroup2);
+        Monster() = default;
+
+        Monster(const int id, std::string name, std::vector<std::string> types,  std::string hp, std::string atk, std::string def, std::string spatk, std::string spdef, std::string spd, std::string eggGroup1, std::string eggGroup2);
         // std::string getName();
         // std::string getType1();
         // std::string getType2();
@@ -64,10 +66,9 @@ struct Monster{
             return this->name + "\n" + this->types[0] + "\n" + this->types[1] + "\n" + this->hp + "\n" + this->atk + "\n" + this->def + "\n" + this->spatk + "\n" + this->spdef + "\n" + this->spd + "\n" + this->eggGroup1 + "\n" + this->eggGroup2;
         }
 
-    private:
         const int id;
         std::string name;
-        vector<std::string> types;
+        std::vector<std::string> types;
         std::string hp;
         std::string atk;
         std::string def;

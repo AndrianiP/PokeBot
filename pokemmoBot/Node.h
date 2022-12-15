@@ -1,7 +1,8 @@
 #include "Monster.h"
+
 using namespace std;
 
-class PokedexEntry<int, Monster>: public MonsterFactory {
+class PokedexEntry<K, Monster>: public MonsterFactory {
     Monster monster;
     int key;
     struct node<K, Monster> *left;
@@ -39,48 +40,48 @@ class PokedexEntry<int, Monster>: public MonsterFactory {
             this->right = right;
         }
 
-};
 
-struct node *newPokedexEntry(int key, Monster monster) {
-    struct node *temp = new node();
-    temp->key = key;
-    temp->monster = monster;
-    temp->left = temp->right = NULL;
-    return temp;
-}
-
-void inorder(struct node *root) {
-    if (root != NULL) {
-        inorder(root->left);
-        cout << root->key << endl;
-        inorder(root->right);
+    struct node *newPokedexEntry(int key, Monster monster) {
+        struct node *temp = new node();
+        temp->key = key;
+        temp->monster = monster;
+        temp->left = temp->right = NULL;
+        return temp;
     }
-}
 
-struct node* insert(struct node* node, int key, Monster monster) {
-    /* If the tree is empty, return a new node */
-    if (node == NULL) return newPokedexEntry(key, monster);
+    void inorder(struct node *root) {
+        if (root != NULL) {
+            inorder(root->left);
+            cout << root->key << endl;
+            inorder(root->right);
+        }
+    }
 
-    /* Otherwise, recur down the tree */
-    if (key < node->key)
-        node->left = insert(node->left, key, monster);
-    else if (key > node->key)
-        node->right = insert(node->right, key, monster);
+    struct node* insert(struct node* node, int key, Monster monster) {
+        /* If the tree is empty, return a new node */
+        if (node == NULL) return newPokedexEntry(key, monster);
 
-    /* return the (unchanged) node pointer */
-    return node;
-}
+        /* Otherwise, recur down the tree */
+        if (key < node->key)
+            node->left = insert(node->left, key, monster);
+        else if (key > node->key)
+            node->right = insert(node->right, key, monster);
 
-//bst search
-Monster search(struct node* root, int key) {
-    // Base Cases: root is null or key is present at root
-    if (root == NULL || root->key == key)
-        return root->monster;
+        /* return the (unchanged) node pointer */
+        return node;
+    }
 
-    // Key is greater than root's key
-    if (root->key < key)
-        return search(root->right, key);
+    //bst search
+    Monster search(struct node* root, int key) {
+        // Base Cases: root is null or key is present at root
+        if (root == NULL || root->key == key)
+            return root->monster;
 
-    // Key is smaller than root's key
-    return search(root->left, key);
-}
+        // Key is greater than root's key
+        if (root->key < key)
+            return search(root->right, key);
+
+        // Key is smaller than root's key
+        return search(root->left, key);
+    }
+};

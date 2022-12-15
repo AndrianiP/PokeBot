@@ -60,7 +60,7 @@ private:
 		this->encounter = encounter;
 	}
 	void setHuntingPokemon(int pokemon) {
-		//TODO look through pokedex for pokemon (hashmap)
+		//TODO look through pokedex for pokemon using binary search tree
 	}
 	void setIsActive(bool active) {
 		this->isActive = active;

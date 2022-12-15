@@ -21,7 +21,7 @@ class Pokedex: public MonsterFactory{
     node* fillPokedex() {
         bool firstEntry = true;
         for (auto& element : data) {
-            Monster monster = createMonster(element[ID], element[NAME][english], element[TYPE], element[BASE][HP], element[BASE][ATK], element[BASE][DEF], element[BASE][SPATK], element[BASE][SPDEF], element[BASE][SPD], "eggGroup1", "eggGroup2");
+            Monster *monster = createMonster(element[ID], element[NAME][english], element[TYPE], element[BASE][HP], element[BASE][ATK], element[BASE][DEF], element[BASE][SPATK], element[BASE][SPDEF], element[BASE][SPD], "eggGroup1", "eggGroup2");
             if (firstEntry) {
                 root = newPokedexEntry(monster.getID(), monster);
                 firstEntry = false;
