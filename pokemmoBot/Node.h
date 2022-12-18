@@ -41,15 +41,25 @@ class PokedexEntry<int, Monster>: public MonsterFactory {
 
 };
 
+<<<<<<< Updated upstream
 struct node *newPokedexEntry(int key, Monster monster) {
     struct node *temp = new node();
+=======
+};
+struct node* newPokedexEntry(int key, Monster monster) {
+    struct node* temp = new node();
+>>>>>>> Stashed changes
     temp->key = key;
     temp->monster = monster;
     temp->left = temp->right = NULL;
     return temp;
 }
 
+<<<<<<< Updated upstream
 void inorder(struct node *root) {
+=======
+void inorder(struct node* root) {
+>>>>>>> Stashed changes
     if (root != NULL) {
         inorder(root->left);
         cout << root->key << endl;
@@ -83,4 +93,8 @@ Monster search(struct node* root, int key) {
 
     // Key is smaller than root's key
     return search(root->left, key);
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
