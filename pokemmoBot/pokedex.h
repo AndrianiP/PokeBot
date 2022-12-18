@@ -4,7 +4,7 @@
 #include <fstream>
 #include "MonsterFactory.h"
 #include "Monster.h"
-#include "Node.h"
+#include "PokedexEntry.h"
 
 using json = nlohmann::json;
 
@@ -21,11 +21,7 @@ class Pokedex: public Monster{
     node* fillPokedex() {
         bool firstEntry = true;
         for (auto& element : data) {
-<<<<<<< Updated upstream
-            Monster monster = createMonster(element[ID], element[NAME][english], element[TYPE], element[BASE][HP], element[BASE][ATK], element[BASE][DEF], element[BASE][SPATK], element[BASE][SPDEF], element[BASE][SPD], "eggGroup1", "eggGroup2");
-=======
             Monster monster = Monster(element[ID], element[NAME][english], element[TYPE], element[BASE][HP], element[BASE][ATK], element[BASE][DEF], element[BASE][SPATK], element[BASE][SPDEF], element[BASE][SPD], "eggGroup1", "eggGroup2");
->>>>>>> Stashed changes
             if (firstEntry) {
                 root = newPokedexEntry(monster.getID(), monster);
                 firstEntry = false;
@@ -36,10 +32,10 @@ class Pokedex: public Monster{
         return root;
     }
 
-    Monster pokeSearch(struct node* node, int key) {
-        Monster monster = search(node, key);
-        return monster;
-    }
+    // Monster pokeSearch(struct node* node, int key) {
+    //     Monster monster = search(node, key);
+    //     return monster;
+    // }
 
     std::string toString(Monster monster){
         monster.toString();

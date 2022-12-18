@@ -1,3 +1,5 @@
 # ninja log v5
 7	308	6927829003662754	CMakeFiles/pokemmoBot.dir/DataWriter.cpp.obj	21a367ac7a0251f
 0	309	6927829003662754	CMakeFiles/pokemmoBot.dir/DataLoader.cpp.obj	f5b6416309140996
+1	397	6931009422509760	CMakeFiles/pokemmoBot.dir/pokemmoBot.cpp.obj	97494cc887cd932
+398	618	6931008293042754	pokemmoBot.exe	afe24cbe12927ac
