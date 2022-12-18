@@ -1,8 +1,7 @@
 ﻿// pokemmoBot.cpp : Defines the entry point for the application.
 //
 
-//#include "pokemmoBot.h"
-#include "Monster.h"
+#include "pokemmoBot.h"
 #include "temp.h"
 using namespace std;
 

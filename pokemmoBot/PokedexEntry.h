@@ -1,6 +1,6 @@
-#include "Monster.h"
+//#include "Monster.h"
 
-using namespace std;
+//using namespace std;
 
 // class PokedexEntry<K, Monster>: public MonsterFactory {
 //     Monster monster;

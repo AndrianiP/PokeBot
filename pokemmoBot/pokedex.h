@@ -2,13 +2,12 @@
 #include <string>
 #include "json.h"
 #include <fstream>
-#include "MonsterFactory.h"
 #include "Monster.h"
 #include "PokedexEntry.h"
 
 using json = nlohmann::json;
 
-class Pokedex: public Monster{
+class Pokedex{
     public:
     struct node *left;
     struct node *right;
@@ -21,12 +20,12 @@ class Pokedex: public Monster{
     node* fillPokedex() {
         bool firstEntry = true;
         for (auto& element : data) {
-            Monster monster = Monster(element[ID], element[NAME][english], element[TYPE], element[BASE][HP], element[BASE][ATK], element[BASE][DEF], element[BASE][SPATK], element[BASE][SPDEF], element[BASE][SPD], "eggGroup1", "eggGroup2");
+           // Monster monster = Monster(int(element[ID]), std::string(element[NAME][english]), {"noType", "noType"}, std::string(element[BASE][HP]), std::string(element[BASE][ATK]), std::string(element[BASE][DEF]), std::string(element[BASE][SPATK]), std::string(element[BASE][SPDEF]), std::string(element[BASE][SPD]), "noEggGroup", "noEggGroup");
             if (firstEntry) {
-                root = newPokedexEntry(monster.getID(), monster);
+               // root = newPokedexEntry(monster.getID(), monster);
                 firstEntry = false;
             }
-                insert(root, monster.getID(), monster);
+                //insert(root, monster.getID(), monster);
         }
  
         return root;
@@ -36,11 +35,6 @@ class Pokedex: public Monster{
     //     Monster monster = search(node, key);
     //     return monster;
     // }
-
-    std::string toString(Monster monster){
-        monster.toString();
-        
-    }
 
     private:
         json data = json::parse(std::ifstream(POKEDEX_DIR));
