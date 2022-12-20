@@ -15,12 +15,17 @@ int main()
 	Pokedex pokedex = Pokedex();
 	//pokedex.toString();
 	PokedexEntry<int, Monster> *root = pokedex.fillPokedex();
-	Monster monster2 = pokedex.pokeSearch(pokedex.root, 72);
+	
+
+	Monster monster2 = pokedex.pokeSearch(72);
 	monster2.toString();
-	Monster monster420 = pokedex.pokeSearch(pokedex.root, 420);
+	Monster monster420 = pokedex.pokeSearch(420);
 	monster420.toString();
-	Monster monster6 = pokedex.pokeSearch(pokedex.root, 6);
+	Monster monster6 = pokedex.pokeSearch(6);
 	monster6.toString();
+	Monster monster1 = pokedex.pokeSearch(10118);
+	monster1.toString();
+	pokedex.pokeSearch(2).toString();
 
 	return 0;
 }

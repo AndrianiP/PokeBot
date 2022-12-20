@@ -8,10 +8,10 @@
 using json = nlohmann::json;
 
 struct Pokedex: public PokedexEntry<int, Monster>{
-    PokedexEntry *root = NULL;
+    PokedexEntry<int, Monster> *root = nullptr;
     json data;
     
-    Pokedex() : PokedexEntry<int, Monster>(0, NULL, NULL, Monster("0", "Name", spriteGIF, spritePNG)){}
+    Pokedex() : PokedexEntry<int, Monster>(){}
 
     void printJSON() {
         std::cout << data << std::endl;
@@ -26,16 +26,16 @@ struct Pokedex: public PokedexEntry<int, Monster>{
         for (auto& element : data) {
             Monster monster = Monster(element[ID], element[NAME], spriteGIF, spritePNG);
             if (firstEntry) {
-                root = insert(root, monster.getIntID(), monster);
+                root = insert(monster.getIntID(), monster);
                 firstEntry = false;
             }
-                insert(root, monster.getIntID(), monster);
+                insert(monster.getIntID(), monster);
         }
 
         return root;
     }
 
-    Monster pokeSearch(PokedexEntry *root, int key) {
+    Monster pokeSearch(int key) {
         if (root == NULL) {
             return Monster("0", "Name", "No GIF", "No PNG");
         }

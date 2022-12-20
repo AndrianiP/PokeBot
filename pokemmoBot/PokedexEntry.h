@@ -8,7 +8,7 @@ struct PokedexEntry {
     int key;
     PokedexEntry<K, Monster> *left;
     PokedexEntry<K, Monster> *right;
-    PokedexEntry<K, Monster> *root = NULL;
+    PokedexEntry<K, Monster> *root = nullptr;
 
     PokedexEntry() {
         this->key = 0;
@@ -50,7 +50,7 @@ struct PokedexEntry {
     }
 
     // Methods
-    PokedexEntry<K, Monster> *insert(PokedexEntry *root, K key, Monster monster){
+    PokedexEntry<K, Monster> *insert(K key, Monster monster){
         if (root == NULL) {
             root = new PokedexEntry<K, Monster>(key, NULL, NULL, monster);
         }
