@@ -1,61 +1,73 @@
 #pragma once
-#include <string>
 #include "json.h"
+#include <iostream>
 #include <fstream>
-#include "MonsterFactory.h"
 #include "Monster.h"
-#include "Node.h"
+#include "PokedexEntry.h"
 
 using json = nlohmann::json;
 
-class Pokedex: public MonsterFactory{
-    public:
-    struct node *left;
-    struct node *right;
-    struct node *root = NULL;
+struct Pokedex: public PokedexEntry<int, Monster>{
+    PokedexEntry *root = NULL;
+    json data;
+    
+    Pokedex() : PokedexEntry<int, Monster>(0, NULL, NULL, Monster("0", "Name", spriteGIF, spritePNG)){}
 
-    Pokedex() {
-        struct node *root = fillPokedex();
+    void printJSON() {
+        std::cout << data << std::endl;
     }
 
-    node* fillPokedex() {
+    PokedexEntry<int, Monster> *fillPokedex() {
+        std::ifstream f(POKEDEX_DIR);
+        data = json::parse(f);
+        //data = data.dump();
+        f.close();
         bool firstEntry = true;
         for (auto& element : data) {
-            Monster *monster = createMonster(element[ID], element[NAME][english], element[TYPE], element[BASE][HP], element[BASE][ATK], element[BASE][DEF], element[BASE][SPATK], element[BASE][SPDEF], element[BASE][SPD], "eggGroup1", "eggGroup2");
+            Monster monster = Monster(element[ID], element[NAME], spriteGIF, spritePNG);
             if (firstEntry) {
-                root = newPokedexEntry(monster.getID(), monster);
+                root = insert(root, monster.getIntID(), monster);
                 firstEntry = false;
             }
-                insert(root, monster.getID(), monster);
+                insert(root, monster.getIntID(), monster);
         }
- 
+
         return root;
     }
 
-    Monster pokeSearch(struct node* node, int key) {
-        Monster monster = search(node, key);
-        return monster;
+    Monster pokeSearch(PokedexEntry *root, int key) {
+        if (root == NULL) {
+            return Monster("0", "Name", "No GIF", "No PNG");
+        }
+        else {
+            PokedexEntry *current = root;
+            while (current->key != key) {
+                if (key < current->key) {
+                    current = current->left;
+                }
+                else {
+                    current = current->right;
+                }
+                if (current == NULL) {
+                    return Monster("0", "Name", "No GIF", "No PNG");
+                }
+            }
+            return current->monster;
+        }
     }
     
-    void toStringPokedex(Monster monster) {
-        monster.toString();
+    void toString() {
+        std::cout << "Pokedex: " << std::endl;
+        std::cout << "Root: " << root << std::endl;
+        std::cout << "Data: " << data << std::endl;
     }
 
-    private:
-        json data = json::parse(std::ifstream(POKEDEX_DIR));
-        
-
-    protected:
-        const std::string POKEDEX_DIR = "pokedex.json";
+    protected: 
+        const std::string POKEDEX_DIR = "./JSON/pokemon.json";
         const std::string ID = "id";
         const std::string NAME = "name";
-        const std::string english = "english";
-        const std::string TYPE = "type";
-        const std::string BASE = "base";
-        const std::string HP = "HP";
-        const std::string ATK = "Attack";
-        const std::string DEF = "Defense";
-        const std::string SPATK = "Sp. Attack";
-        const std::string SPDEF = "Sp. Defense";
-        const std::string SPD = "Speed";
+
+        const std::string spriteGIF = "animated";
+        const std::string spritePNG = "static";
+        
 };

@@ -56,20 +56,6 @@ build CMakeFiles\pokemmoBot.dir\pokemmoBot.cpp.obj: CXX_COMPILER__pokemmoBot_Deb
   TARGET_COMPILE_PDB = CMakeFiles\pokemmoBot.dir\
   TARGET_PDB = pokemmoBot.pdb
 
-build CMakeFiles\pokemmoBot.dir\DataLoader.cpp.obj: CXX_COMPILER__pokemmoBot_Debug D$:\Documents\Coding\PokeMMOBot\pokemmoBot\DataLoader.cpp || cmake_object_order_depends_target_pokemmoBot
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = CMakeFiles\pokemmoBot.dir
-  OBJECT_FILE_DIR = CMakeFiles\pokemmoBot.dir
-  TARGET_COMPILE_PDB = CMakeFiles\pokemmoBot.dir\
-  TARGET_PDB = pokemmoBot.pdb
-
-build CMakeFiles\pokemmoBot.dir\DataWriter.cpp.obj: CXX_COMPILER__pokemmoBot_Debug D$:\Documents\Coding\PokeMMOBot\pokemmoBot\DataWriter.cpp || cmake_object_order_depends_target_pokemmoBot
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = CMakeFiles\pokemmoBot.dir
-  OBJECT_FILE_DIR = CMakeFiles\pokemmoBot.dir
-  TARGET_COMPILE_PDB = CMakeFiles\pokemmoBot.dir\
-  TARGET_PDB = pokemmoBot.pdb
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target pokemmoBot
@@ -78,7 +64,7 @@ build CMakeFiles\pokemmoBot.dir\DataWriter.cpp.obj: CXX_COMPILER__pokemmoBot_Deb
 #############################################
 # Link the executable pokemmoBot.exe
 
-build pokemmoBot.exe: CXX_EXECUTABLE_LINKER__pokemmoBot_Debug CMakeFiles\pokemmoBot.dir\pokemmoBot.cpp.obj CMakeFiles\pokemmoBot.dir\DataLoader.cpp.obj CMakeFiles\pokemmoBot.dir\DataWriter.cpp.obj
+build pokemmoBot.exe: CXX_EXECUTABLE_LINKER__pokemmoBot_Debug CMakeFiles\pokemmoBot.dir\pokemmoBot.cpp.obj
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

@@ -2,11 +2,16 @@
 //
 
 #include "pokemmoBot.h"
+#include "temp.h"
+#include "tempJSON.h"
 
-using namespace std;
 
 int main()
 {
+	// terminate called after throwing an instance of 'std::length_error'
+  	// what():  basic_string::_M_create
+	std::string required; // Error occurs if not included
+
 	Pokedex pokedex = Pokedex();
 	//pokedex.toString();
 	PokedexEntry<int, Monster> *root = pokedex.fillPokedex();
