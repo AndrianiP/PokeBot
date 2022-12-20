@@ -12,9 +12,9 @@ struct PokedexEntry {
 
     PokedexEntry() {
         this->key = 0;
-        this->monster = Monster();
         this->left = NULL;
         this->right = NULL;
+        this->monster = Monster();
     }
 
     PokedexEntry(K key, PokedexEntry<K, Monster> *left, PokedexEntry<K, Monster> *right, Monster monster) {
