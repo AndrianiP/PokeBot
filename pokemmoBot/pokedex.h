@@ -36,10 +36,9 @@ class Pokedex: public MonsterFactory{
         Monster monster = search(node, key);
         return monster;
     }
-
-    std::string toString(Monster monster){
+    
+    void toStringPokedex(Monster monster) {
         monster.toString();
-        
     }
 
     private:

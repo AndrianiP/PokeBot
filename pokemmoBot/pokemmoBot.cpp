@@ -8,7 +8,14 @@ using namespace std;
 int main()
 {
 	Pokedex pokedex = Pokedex();
-	//Monster monster = pokedex.pokeSearch(pokedex.root, 1);
-	//monster.toString();
+	//pokedex.toString();
+	PokedexEntry<int, Monster> *root = pokedex.fillPokedex();
+	Monster monster2 = pokedex.pokeSearch(pokedex.root, 72);
+	monster2.toString();
+	Monster monster420 = pokedex.pokeSearch(pokedex.root, 420);
+	monster420.toString();
+	Monster monster6 = pokedex.pokeSearch(pokedex.root, 6);
+	monster6.toString();
+
 	return 0;
 }
