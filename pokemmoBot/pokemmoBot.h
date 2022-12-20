@@ -4,7 +4,6 @@
 #pragma once
 
 #include <iostream>
-#include <string>
 #include "pokedex.h"
 
 class pokeBot

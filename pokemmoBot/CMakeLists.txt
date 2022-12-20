@@ -6,10 +6,6 @@ cmake_minimum_required (VERSION 3.8)
 project ("pokemmoBot")
 
 # Add source to this project's executable.
-<<<<<<< Updated upstream
-add_executable (pokemmoBot "pokemmoBot.cpp" "pokemmoBot.h"  "pokedex.h" "json.h" "BST.h" "PokedexEntry.h" "DataConstants.h" "Monster.h" "MonsterFactory.h" "DataLoader.cpp" "DataLoader.h" )
-=======
-add_executable (pokemmoBot "pokemmoBot.cpp" "pokemmoBot.h"  "pokedex.h" "json.h" "Monster.h" "MonsterFactory.h")
->>>>>>> Stashed changes
+add_executable (pokemmoBot "pokemmoBot.cpp" "pokemmoBot.h" "tempJSON.h" "pokedex.h" "json.h" "Monster.h" "PokedexEntry.h" "temp.h" "")
 
 # TODO: Add tests and install targets if needed.

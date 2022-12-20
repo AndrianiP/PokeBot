@@ -3,20 +3,22 @@
 
 #include "pokemmoBot.h"
 #include "temp.h"
-using namespace std;
+#include "tempJSON.h"
+
 
 int main()
 {
-	// Pokedex pokedex = Pokedex();
-	// Monster monster = pokedex.pokeSearch(pokedex.root, 1);
-	// monster.toString();
-	Test defaultTest = Test();
-	defaultTest.toString();
+	// terminate called after throwing an instance of 'std::length_error'
+  	// what():  basic_string::_M_create
+	std::string required; // Error occurs if not included
 
-	Test test = Test(32, "David The Lizard");
-	test.toString();
-	Monster monster;
-	monster = Monster(1,"2", {"grass", "poison"}, "100", "100", "100", "100", "100", "100", "eggGroup1", "eggGroup2");
-	monster.toString();
+	Pokedex pokedex = Pokedex();
+	//pokedex.toString();
+	PokedexEntry<int, Monster> *root = pokedex.fillPokedex();
+	Monster monster2 = pokedex.pokeSearch(pokedex.root, 72);
+	monster2.toString();
+	Monster monster420 = pokedex.pokeSearch(pokedex.root, 420);
+	monster420.toString();
+
 	return 0;
 }
