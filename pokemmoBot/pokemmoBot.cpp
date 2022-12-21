@@ -2,9 +2,7 @@
 //
 
 #include "pokemmoBot.h"
-#include "temp.h"
-#include "tempJSON.h"
-
+#include <opencv2/opencv.hpp>
 
 int main()
 {
@@ -21,6 +19,10 @@ int main()
 	Monster monster1 = pokedex.pokeSearch(10118);
 	monster1.toString();
 	pokedex.pokeSearch(2).toString();
+
+	//Test .exe
+	int x;
+	std::cin >> x;
 
 	return 0;
 }
