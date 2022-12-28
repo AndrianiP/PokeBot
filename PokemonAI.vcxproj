@@ -29,7 +29,7 @@
     <ClInclude Include="PokedexEntry.h" />
     <ClInclude Include="pokemmoBot.h" />
     <ClInclude Include="StateDetection.h" />
-    <ClInclude Include="TESTING.h" />
+    <ClInclude Include="StateTraining.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pokemmoBot.cpp" />

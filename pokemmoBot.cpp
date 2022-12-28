@@ -1,8 +1,7 @@
 ﻿// pokemmoBot.cpp : Defines the entry point for the application.
 //
-#include "TESTING.h"
+#include "StateTraining.h"
 #include "pokemmoBot.h"
-#include <opencv2/opencv.hpp>
 
 int main()
 {
@@ -25,19 +24,19 @@ int main()
     HWND hwnd = GetDesktopWindow();
     Mat src = infoGrab.takeScreenshot(hwnd);
     int counter = 0;
+    imshow("test", src);
+    infoGrab.saveImage(src, "./TrainingImages/" + std::to_string(counter) + ".png");
     while(true){
-        imshow("test", src);
-        infoGrab.saveImage(src, "./TrainingImages/"+std::to_string(counter)+".png");
-
-        waitKey(32);
+        if (waitKey(0) == 32) {
+            Mat src = infoGrab.takeScreenshot(hwnd);
+            imshow("test", src);
+            counter++;
+            infoGrab.saveImage(src, "./TrainingImages/" + std::to_string(counter) + ".png");
+        }
+        if (waitKey(0) == 27) {
+            destroyAllWindows();
+        }
     }
 
 	return 0;
 }
-
- void saveImage(Mat src, std::string filename){
-        std::vector<uchar> buf;
-        imencode(".png", src, buf);
-        imwrite(filename, src);
-        buf.clear();
-    }
