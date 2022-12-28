@@ -1,7 +1,0 @@
-[
-{
-  "directory": "D:/Documents/Coding/PokeMMOBot/pokemmoBot/build",
-  "command": "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1430~1.307\\bin\\Hostx86\\x64\\cl.exe  /nologo /TP -DPATH_TO_JSON=\"\\\"C:/Program Files (x86)/pokemmoBot/JSON/pokemon.json\\\")\" -IC:\\vcpkg\\packages\\opencv4_x86-windows\\include /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 /FoCMakeFiles\\pokemmoBot.dir\\pokemmoBot.cpp.obj /FdCMakeFiles\\pokemmoBot.dir/ /FS -c D:\\Documents\\Coding\\PokeMMOBot\\pokemmoBot\\pokemmoBot.cpp",
-  "file": "D:/Documents/Coding/PokeMMOBot/pokemmoBot/pokemmoBot.cpp"
-}
-]
